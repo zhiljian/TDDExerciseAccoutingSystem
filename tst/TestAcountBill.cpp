@@ -46,7 +46,7 @@ TEST(TestAccount, GoldAccountMinutesUsedInQuota)
   EXPECT_DOUBLE_EQ(GoldBasicRate, bill);
 }
 
-TEST(TestAccount, GoldAccountMinutesExceedQuotaShallPlusExceedFee)
+TEST(TestAccount, GoldAccountMinutesExceedQuotaShallPlusExceedRates)
 {
   Account account = Account(Gold);
   double bill = account.Bill(1, GoldQuota + 1);
@@ -62,6 +62,13 @@ TEST(TestAccount, SilverAccountMinutesUsedInQuota)
   double bill = account.Bill(1, SilverQuota - 1);
 
   EXPECT_DOUBLE_EQ(SilverBasicRate, bill);
+}
+
+TEST(TestAccount, SilverAccountMinutesExceedQuotaShallPlusExceedRates)
+{
+  Account account = Account(Silver);
+  double bill = account.Bill(1, SilverQuota + 20);
+  EXPECT_DOUBLE_EQ(SilverBasicRate + (20 * SilverExceedMinutesRate), bill);
 }
 
 

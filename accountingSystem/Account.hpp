@@ -7,7 +7,7 @@ static const double GoldExceedMinutesRate = 0.45;
 
 static const double SilverBasicRate = 29.95;
 static const double SilverAdditionRate = 21.50;
-
+static const double SilverExceedMinutesRate = 0.54;
 
 static const int GoldQuota = 1000;
 static const int SilverQuota = 500;
