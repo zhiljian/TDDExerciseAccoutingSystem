@@ -10,6 +10,7 @@ static const double SilverAdditionRate = 21.50;
 
 
 static const int GoldQuota = 1000;
+static const int SilverQuota = 500;
 
 enum Type {Gold, Silver};
 
