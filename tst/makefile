@@ -22,6 +22,7 @@ $(CXX_OBJS) : %.o : %.cpp
 	echo $@
 	$(GXX) -c -o $@ $^ $(FLAGS)
 
+
 clean:
 	-rm $(C_OBJS) $(CXX_OBJS) $(TARGET)
 
