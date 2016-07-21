@@ -5,14 +5,14 @@ double Account::Bill(Type type, int line)
 {
   if (Gold == type){
     if (line > 1){
-      return (line - 1) * GoldAddiLineCost + GoldMainLineCost;
+      return (line - 1) * GoldAdditionRate + GoldBasicRate;
     }
-    return GoldMainLineCost;
+    return GoldBasicRate;
   }
   
   if (line > 1){
-    return (line - 1) * SilverAddiLineCost + SilverMainLineCost;
+    return (line - 1) * SilverAdditionRate + SilverBasicRate;
   }
 
-  return SilverMainLineCost;
+  return SilverBasicRate;
 }
