@@ -1,7 +1,7 @@
 
 #include "Account.hpp"
 
-double Account::Bill(int line)
+double Account::Bill(int line, int minutes)
 {
   if (Gold == m_type){
     if (line > 1){

@@ -37,3 +37,12 @@ TEST(TestAccount, GivenSliverAccountWithMultLinesShallHaveMainLineCostPlusMoreAd
   EXPECT_DOUBLE_EQ((2*SilverAdditionRate) + SilverBasicRate, bill);
 }
 
+
+TEST(TestAccount, GoldAccountMinutesUsedInQuota)
+{
+  Account account = Account(Gold);
+  double bill = account.Bill(1, GoldQuota - 1);
+
+  EXPECT_DOUBLE_EQ(GoldBasicRate, bill);
+}
+
