@@ -9,5 +9,10 @@ double Account::Bill(Type type, int line)
     }
     return GoldMainLineCost;
   }
-  return SliverMainLineCost;
+  
+  if (line > 1){
+    return (line - 1) * SilverAddiLineCost + SilverMainLineCost;
+  }
+
+  return SilverMainLineCost;
 }

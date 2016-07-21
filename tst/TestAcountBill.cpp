@@ -28,13 +28,13 @@ TEST(TestAccount, GivenSilverAccountWithOneLineShallHaveMainLineCost)
   Account account = Account();
   double bill = account.Bill(Silver, 1);
   
-  EXPECT_EQ(SliverMainLineCost, bill);
+  EXPECT_EQ(SilverMainLineCost, bill);
 }
 
 TEST(TestAccount, GivenSliverAccountWithMultLinesShallHaveMainLineCostPlusMoreAdditionLineCost){
   Account account = Account();
-  double bill = account.Bill(Sliver, 3);
+  double bill = account.Bill(Silver, 3);
   
-  EXPECT_EQ((2*SliverAddiLineCost) + SliverMainLineCost, bill);
+  EXPECT_EQ((2*SilverAddiLineCost) + SilverMainLineCost, bill);
 }
 
