@@ -6,5 +6,8 @@ class TestAccount : public ::testing::Test{
 
 TEST(TestAccount, GivenGoldAcountWithOneLineShallHaveMainLineCost)
 {
-  FAIL() << "start from here!";
+  Account account = Account();
+  double bill = account.Bill(GOLD, 1);
+  
+  EXPECT_EQ(49.95, bill);
 }
