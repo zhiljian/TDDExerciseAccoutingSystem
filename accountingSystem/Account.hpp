@@ -1,6 +1,7 @@
 #ifndef __ACCOUNT_HPP__
 #define __ACCOUNT_HPP__
 
+static const double GoldMainLineCost = 49.95;
 enum Type {Gold, Silver};
 
 class Account{

@@ -3,5 +3,5 @@
 
 double Account::Bill(Type type, int line)
 {
-  return 49.95;
+  return GoldMainLineCost;
 }
