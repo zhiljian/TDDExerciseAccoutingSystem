@@ -21,3 +21,12 @@ TEST(TestAccount, GivenGoldAccountWithTwoLinesShallHaveMainLineCostPlusAdditiona
 
   EXPECT_EQ(GoldMainLineCost + GoldAddiLineCost, bill);
 }
+
+
+TEST(TestAccount, GivenSilverAccountWithOneLineShallHaveMainLineCost)
+{
+  Account account = Account();
+  double bill = account.Bill(Silver, 1);
+  
+  EXPECT_EQ(SliverMainLineCost, bill);
+}

@@ -3,6 +3,7 @@
 
 static const double GoldMainLineCost = 49.95;
 static const double GoldAddiLineCost = 14.50;
+static const double SliverMainLineCost = 29.95;
 
 enum Type {Gold, Silver};
 
