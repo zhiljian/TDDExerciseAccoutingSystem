@@ -3,8 +3,11 @@
 
 double Account::Bill(Type type, int line)
 {
-  if (line > 1){
-    return (line - 1) * GoldAddiLineCost + GoldMainLineCost;
+  if (Gold == type){
+    if (line > 1){
+      return (line - 1) * GoldAddiLineCost + GoldMainLineCost;
+    }
+    return GoldMainLineCost;
   }
-  return GoldMainLineCost;
+  return SliverMainLineCost;
 }
