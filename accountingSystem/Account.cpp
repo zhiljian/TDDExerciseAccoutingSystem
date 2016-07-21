@@ -11,9 +11,13 @@ double Account::Bill(int line, int minutes)
     return rate += (line - 1) * GoldAdditionRate + GoldBasicRate;
   }
   
-  if (line > 1){
-    return (line - 1) * SilverAdditionRate + SilverBasicRate;
+  if (minutes > SilverQuota){
+    rate = (minutes - SilverQuota) * SilverExceedMinutesRate;
   }
 
-  return SilverBasicRate;
+  if (line > 1){
+    return rate += (line - 1) * SilverAdditionRate + SilverBasicRate;
+  }
+
+  return rate += SilverBasicRate;
 }

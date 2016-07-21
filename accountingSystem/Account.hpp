@@ -19,7 +19,7 @@ private:
   Type m_type;
 public:
   Account(Type type) : m_type(type){}
-  double Bill(int line, int minutes = GoldQuota);
+  double Bill(int line, int minutes);
 };
 
 #endif //__ACCOUNT_HPP__

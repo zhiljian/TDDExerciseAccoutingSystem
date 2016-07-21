@@ -9,14 +9,14 @@ class TestAccount : public ::testing::Test{
 TEST(TestAccount, GivenGoldAcountWithOneLineShallHaveMainLineCost)
 {
   Account account = Account(Gold);
-  double bill = account.Bill(1);
+  double bill = account.Bill(1, GoldQuota);
   EXPECT_DOUBLE_EQ(GoldBasicRate, bill);
 }
 
 TEST(TestAccount, GivenGoldAccountWithTwoLinesShallHaveMainLineCostPlusAdditionalLineCost)
 {
   Account account = Account(Gold);
-  double bill = account.Bill(2);
+  double bill = account.Bill(2, GoldQuota);
 
   EXPECT_DOUBLE_EQ(GoldBasicRate + GoldAdditionRate, bill);
 }
@@ -25,14 +25,14 @@ TEST(TestAccount, GivenGoldAccountWithTwoLinesShallHaveMainLineCostPlusAdditiona
 TEST(TestAccount, GivenSilverAccountWithOneLineShallHaveMainLineCost)
 {
   Account account = Account(Silver);
-  double bill = account.Bill(1);
+  double bill = account.Bill(1, SilverQuota);
   
   EXPECT_DOUBLE_EQ(SilverBasicRate, bill);
 }
 
 TEST(TestAccount, GivenSliverAccountWithMultLinesShallHaveMainLineCostPlusMoreAdditionLineCost){
   Account account = Account(Silver);
-  double bill = account.Bill(3);
+  double bill = account.Bill(3, SilverQuota);
   
   EXPECT_DOUBLE_EQ((2*SilverAdditionRate) + SilverBasicRate, bill);
 }
