@@ -9,6 +9,7 @@ For a single account with one main line and any optional "additional lines", cal
 
 ##### **Plan Rates**
 Here are the rates for each plan type:
+
 | Plan     | Basic Monthly Rate | Rate per Additional Line   |
 | :------- | ----: | :---: |
 | Gold | 49.95 |  14.50    |
@@ -34,6 +35,7 @@ For a single account, calculate a monthly phone bill, including excess minutes b
 
 ##### **Plan Rates**
 Here are excess minutes rates for each plan type:
+
 | Plan     | Basic Monthly Rate | Included Minutes  |
 | :------- | :----: | :---: |
 | Gold | 49.95 |  1000   |
