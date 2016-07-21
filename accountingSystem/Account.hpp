@@ -9,8 +9,11 @@ static const double SilverAdditionRate = 21.50;
 enum Type {Gold, Silver};
 
 class Account{
+private:
+  Type m_type;
 public:
-  double Bill(Type type, int line);
+  Account(Type type) : m_type(type){}
+  double Bill(int line);
 };
 
 #endif //__ACCOUNT_HPP__

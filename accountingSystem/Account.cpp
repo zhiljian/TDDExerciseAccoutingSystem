@@ -1,9 +1,9 @@
 
 #include "Account.hpp"
 
-double Account::Bill(Type type, int line)
+double Account::Bill(int line)
 {
-  if (Gold == type){
+  if (Gold == m_type){
     if (line > 1){
       return (line - 1) * GoldAdditionRate + GoldBasicRate;
     }

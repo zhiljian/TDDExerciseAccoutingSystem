@@ -8,32 +8,32 @@ class TestAccount : public ::testing::Test{
 
 TEST(TestAccount, GivenGoldAcountWithOneLineShallHaveMainLineCost)
 {
-  Account account = Account();
-  double bill = account.Bill(Gold, 1);
-  EXPECT_EQ(GoldBasicRate, bill);
+  Account account = Account(Gold);
+  double bill = account.Bill(1);
+  EXPECT_DOUBLE_EQ(GoldBasicRate, bill);
 }
 
 TEST(TestAccount, GivenGoldAccountWithTwoLinesShallHaveMainLineCostPlusAdditionalLineCost)
 {
-  Account account = Account();
-  double bill = account.Bill(Gold, 2);
+  Account account = Account(Gold);
+  double bill = account.Bill(2);
 
-  EXPECT_EQ(GoldBasicRate + GoldAdditionRate, bill);
+  EXPECT_DOUBLE_EQ(GoldBasicRate + GoldAdditionRate, bill);
 }
 
 
 TEST(TestAccount, GivenSilverAccountWithOneLineShallHaveMainLineCost)
 {
-  Account account = Account();
-  double bill = account.Bill(Silver, 1);
+  Account account = Account(Silver);
+  double bill = account.Bill(1);
   
-  EXPECT_EQ(SilverBasicRate, bill);
+  EXPECT_DOUBLE_EQ(SilverBasicRate, bill);
 }
 
 TEST(TestAccount, GivenSliverAccountWithMultLinesShallHaveMainLineCostPlusMoreAdditionLineCost){
-  Account account = Account();
-  double bill = account.Bill(Silver, 3);
+  Account account = Account(Silver);
+  double bill = account.Bill(3);
   
-  EXPECT_EQ((2*SilverAdditionRate) + SilverBasicRate, bill);
+  EXPECT_DOUBLE_EQ((2*SilverAdditionRate) + SilverBasicRate, bill);
 }
 
