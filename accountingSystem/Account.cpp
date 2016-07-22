@@ -14,10 +14,5 @@ double Account::Bill(int line, int minutes)
   if (minutes > SilverQuota){
     rate = (minutes - SilverQuota) * SilverExceedMinutesRate;
   }
-
-  if (line > 1){
-    return rate += (line - 1) * SilverAdditionRate + SilverBasicRate;
-  }
-
-  return rate += SilverBasicRate;
+  return rate += (line - 1) * SilverAdditionRate + SilverBasicRate;
 }
