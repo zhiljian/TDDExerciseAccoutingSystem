@@ -43,3 +43,32 @@ void AccoutingSystem::checkParameter()
   }
 }
 
+bool AccoutingSystem::isQualityForFamily()
+{
+  return (m_additionalNum > 2);
+}
+
+double AccoutingSystem::getBillByIteration3()
+{
+  int exceedMinutes = 0;
+  double totalFee = 0.0;
+  double fee = 0.0;
+  fee += (m_additionalNum - 2) * 5.0;
+  if (Gold == m_type)
+  {
+    totalFee = (49.95 * m_basicNum + 14.50 * 2);
+    exceedMinutes = m_usedMinutes > 1000 ? m_usedMinutes-1000 : 0;
+    totalFee += (fee + 0.50 * exceedMinutes);
+  }
+  else if(Silver == m_type)
+  {
+    totalFee = (29.95 * m_basicNum + 21.50 * 2);
+    exceedMinutes = m_usedMinutes > 500 ? m_usedMinutes-500 : 0;
+    totalFee += (fee + 0.54 * exceedMinutes);
+  }
+  
+  return totalFee;
+}
+
+
+

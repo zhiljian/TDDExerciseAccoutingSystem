@@ -74,6 +74,30 @@ TEST(TestGame, OneSilverBasicLineAndExceedTwentyMinutesNeed4075)
   EXPECT_EQ(40.75,as.getBillByIteration2());
 }
 
+TEST(TestGame, OneGoldBasicLineAndThreeAdditionalLineNotExceedMinutesNeed8395)
+{
+  PLANTYPE type = Gold;
+  int BasicGoldNum = 1;
+  int AdditionnalGoldNum = 3;
+  int usedMinutes = 1000;
+  AccoutingSystem as(type,BasicGoldNum,AdditionnalGoldNum,usedMinutes);
+  as.checkParameter();
+  EXPECT_EQ(83.95,as.getBillByIteration3());
+  EXPECT_EQ(true,as.isQualityForFamily());
+}
+TEST(TestGame, OneSilverBasicLineAndFourAdditionalLineExceedTwentyMinutesNeed9375)
+{
+  PLANTYPE type = Silver;
+  int BasicGoldNum = 1;
+  int AdditionnalGoldNum = 4;
+  int usedMinutes = 520;
+  AccoutingSystem as(type,BasicGoldNum,AdditionnalGoldNum,usedMinutes);
+  as.checkParameter();
+  EXPECT_EQ(93.75,as.getBillByIteration3());
+  EXPECT_EQ(true,as.isQualityForFamily());
+}
+
+
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
