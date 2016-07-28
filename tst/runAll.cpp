@@ -66,8 +66,8 @@ TEST(TestGame, OneGoldBasicLineAndNotExceedMinuteNeed4995)
 TEST(TestGame, OneSilverBasicLineAndExceedTwentyMinutesNeed4075)
 {
   PLANTYPE type = Silver;
-  int BasicGoldNum = 0;
-  int AdditionnalGoldNum = 1;
+  int BasicGoldNum = 1;
+  int AdditionnalGoldNum = 0;
   int usedMinutes = 520;
   AccoutingSystem as(type,BasicGoldNum,AdditionnalGoldNum,usedMinutes);
   as.checkParameter();
