@@ -12,6 +12,7 @@ public:
   m_additionalNum(additionalNum)
   {
   };
+  void checkParameter();
   double getBillByIteration1();
 private:
   PLANTYPE m_type;
