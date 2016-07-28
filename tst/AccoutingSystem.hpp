@@ -6,5 +6,15 @@ enum PLANTYPE
 class AccoutingSystem
 {
 public:
-  double getBill(PLANTYPE type,int LineNum);
+  AccoutingSystem(PLANTYPE type,int basicNum,int additionalNum):
+  m_type(type),
+  m_basicNum(basicNum),
+  m_additionalNum(additionalNum)
+  {
+  };
+  double getBillByIteration1();
+private:
+  PLANTYPE m_type;
+  int m_basicNum;
+  int m_additionalNum;
 };

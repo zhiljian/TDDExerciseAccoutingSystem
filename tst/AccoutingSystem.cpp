@@ -1,15 +1,25 @@
 #include "AccoutingSystem.hpp"
 
-double AccoutingSystem::getBill(PLANTYPE type,int LineNum)
+double AccoutingSystem::getBillByIteration1()
 {
-  if (Gold == type)
+  double totalFee = 0.0;
+  if (Gold == m_type)
   {
-     return 49.95;
+     totalFee = (49.95 * m_basicNum + 14.50 * m_additionalNum);
   }
-  else if(Silver == type)
+  else if(Silver == m_type)
   {
-    return 29.95;
+    totalFee = (29.95 * m_basicNum + 21.50 * m_additionalNum);
   }
- 
+  return totalFee;
+}
+
+void AccoutingSystem::checkParameter()
+{
+  if(m_basicNum <= 0 || m_additionalNum < 0)
+  {
+    m_basicNum = 0;
+    m_additionalNum = 0;
+  }
 }
 
